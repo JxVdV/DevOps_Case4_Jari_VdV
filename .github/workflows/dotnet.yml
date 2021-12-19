@@ -22,7 +22,7 @@ jobs:
     - name: Publish
       run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true
       
-    - name: Upload WebApp2 Build Artifact
+    - name: Upload Dev_OpsWPF Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: WebApp2
