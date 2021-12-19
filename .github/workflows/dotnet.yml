@@ -19,16 +19,5 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    
     - name: Publish
-      run: dotnet publish
-      
-    - name: Upload WebApp1 Build Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: Dev_OpsWPF_exec
-        path: DevOps_Case4_Jari_VdV/bin/Debug/net5.0-windows/*exe
+      run: dotnet publish -r win-x64 -c Release --self-contained
